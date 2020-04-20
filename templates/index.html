@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+
+    <title>Python Finance Information</title>
+    <meta name="description" content="The HTML5 Herald"/>
+    <meta name="author" content="Varun"/>
+</head>
+
+<body>
+<h4>Python Finance Information:</h4>
+<div class="base">
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        Current Date and Time: {{finance_information.curr_date_time}} <br><br>
+        Name of the Company: {{finance_information.name}} <br><br>
+		Price: {{finance_information.price}} <br><br>
+		Change: {{finance_information.change}} <br><br>
+		Change Percentage: {{finance_information.change_percentage}} <br><br>
+        <input type="submit" value="Submit"/>
+        <input type="reset" value="Reset"/>
+    </form>
+</div>
+</body>
+</html>
