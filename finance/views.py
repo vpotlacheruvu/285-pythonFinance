@@ -28,7 +28,7 @@ class FinanceView(TemplateView):
                     symbol = Stock(stock, token="sk_811c037d41194d5a813e26af7d465358")
                     name = symbol.get_company_name() + " (" + str(stock) + ")\n\n"
                 except IEXQueryError:
-                    return HttpResponse('This symbol does not exist or is unavailable. Please go back and try again!')
+                    return HttpResponse('Sorry, this symbol does not exist or is unavailable at the moment. Please go back and try again!')
                 curr_date_time = now
 
         url = "https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol={}&interval=5min&apikey=XHUBBJ82VU4ZCE6J"
